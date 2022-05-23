@@ -17,6 +17,9 @@ def task(src, dst):
             shutil.copyfile(src, dst)
             break
         except OSError:
+            if os.path.isfile(dst):     # OSError generates an empty file
+                os.remove(dst)
+
             print("OSError: src [" + src + "], dst [" + dst + "] - Trying again")
 
 def rem_dirs(list, path):
