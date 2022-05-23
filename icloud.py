@@ -56,7 +56,8 @@ def main():
     diff_list = get_element_diff(online_list, offline_list)
 
     threads = []
-    loading_amount = 0
+    progress = 0
+    amount_to_copy = str(len(diff_list))
 
     for element in diff_list:
         src = icloud_path + "\\" + element
@@ -75,8 +76,8 @@ def main():
         threads.append(threading.Thread(target=task, args=(src,dst)))
         threads[len(threads)-1].start()
 
-        loading_amount = loading_amount + 1
-        print(str(loading_amount) + "/" + str(len(diff_list)))
+        progress = progress + 1
+        print(str(progress) + "/" + amount_to_copy)
         
 
 
