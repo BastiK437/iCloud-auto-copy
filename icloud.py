@@ -1,5 +1,3 @@
-from concurrent.futures import ThreadPoolExecutor, thread
-from itertools import count
 import os
 import shutil
 import threading
@@ -14,10 +12,12 @@ thread_amount = 5
 
 def task(src, dst):
     print("\nThread started \nCopy from '" + src + "' to '" + dst + "'")
-    try:
-        shutil.copyfile(src, dst)
-    except OSError:
-        print("OSError: src [" + src + "], dst [" + dst + "]")
+    while True:
+        try:
+            shutil.copyfile(src, dst)
+            break
+        except OSError:
+            print("OSError: src [" + src + "], dst [" + dst + "] - Trying again")
 
 def rem_dirs(list, path):
     for element in list:
