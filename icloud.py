@@ -5,9 +5,9 @@ from time import sleep
 
 user_name = os.getlogin()
 
-path_to_photos = "C:\\Users\\" + user_name + "\\Pictures"
-icloud_dir_name = "iCloud Photos\\Photos"
-icloud_copy_dir = "iCloud Offline"
+path_to_photos = "C:\\Users\\" + user_name + "\\OneDrive\\Bilder"
+icloud_dir_name = "C:\\Users\\" + user_name + "\\iCloudPhotos\\Photos"
+icloud_copy_dir = "iCloud_Offline"
 thread_amount = 5
 
 def task(src, dst):
@@ -37,12 +37,12 @@ def get_element_diff(elements_src, elements_dest):
 
 def main():
     if not os.path.isdir(path_to_photos):
-        print("Path to photos directory incorrect")
+        print("Path to photos directory incorrect:", path_to_photos)
         exit()
 
-    icloud_path = path_to_photos + "\\" + icloud_dir_name
+    icloud_path = icloud_dir_name
     if not os.path.isdir(icloud_path):
-        print("Path to icloud directory incorrect")
+        print("Path to icloud directory incorrect:", icloud_path)
         exit()
 
     icloud_copy_path = path_to_photos + "\\" + icloud_copy_dir
