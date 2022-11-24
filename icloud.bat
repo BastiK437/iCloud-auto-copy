@@ -1,2 +1,2 @@
-python C:\Users\karin\OneDrive\Dokumente\icloud\icloud.py
+python C:\Users\Karin\Documents\Workspace\iCloud-auto-copy\icloud.py
 pause

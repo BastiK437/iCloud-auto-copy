@@ -5,8 +5,8 @@ from time import sleep
 
 user_name = os.getlogin()
 
-path_to_photos = "C:\\Users\\" + user_name + "\\OneDrive\\Bilder"
-icloud_dir_name = "C:\\Users\\" + user_name + "\\iCloudPhotos\\Photos"
+path_to_photos = "C:\\Users\\" + user_name + "\\Pictures"
+icloud_dir_name = "C:\\Users\\" + user_name + "\\Pictures\\iCloud Photos\\Photos"
 icloud_copy_dir = "iCloud_Offline"
 thread_amount = 5
 
